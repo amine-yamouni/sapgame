@@ -1,0 +1,29 @@
+name: 'Build actions'
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12]
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Install node.js dependencies'
+        run: npm install
+      - name: 'Build'
+        run: npm run build
+      - name: 'Lint'
+        run: npm run lint
+      - name: 'Deploy packaged files'
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: './index.js,./dist/index.html,./dist/*'
+          target: ${{ secrets.SERVER_TARGET }}
+          use_insecure_cipher: true
+          debug: true

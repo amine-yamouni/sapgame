@@ -1,0 +1,16 @@
+name: 'Build actions'
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [12, 14]
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Install node.js dependencies'
+        run: npm install
+      - name: 'Build'
+        run: npm run build
+      - name: 'Lint'
+        run: npm run lint
