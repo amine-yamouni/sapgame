@@ -33,7 +33,7 @@
     components: { Page },
     data() {
       return {
-        christmasDay: new Date('2021-12-01').getTime(),
+        christmasDay: new Date('2023-12-01').getTime(),
         nbDaysRemaining: 0,
         nbHoursRemaining: 0,
         nbMinutesRemaining: 0,

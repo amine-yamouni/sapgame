@@ -9,7 +9,7 @@ import {
   RankingView,
 } from '../views';
 
-const launchAppDay = new Date('2021-12-01').getTime();
+const launchAppDay = new Date('2023-12-01').getTime();
 const today = Date.now();
 const launched = launchAppDay - today < 0;
 const showCountdown = !launched && process.env.NODE_ENV !== 'develop';

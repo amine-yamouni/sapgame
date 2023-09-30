@@ -42,7 +42,7 @@
     components: { Calendar, Page },
     data() {
       return {
-        christmasDay: new Date('2021-12-25').getTime(),
+        christmasDay: new Date('2023-12-25').getTime(),
         nbDaysRemaining: 0,
         nbHoursRemaining: 0,
         nbMinutesRemaining: 0,
