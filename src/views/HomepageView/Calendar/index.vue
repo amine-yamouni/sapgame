@@ -1,22 +1,22 @@
 <template>
   <div id="calendar-container">
     <div id="calendar">
-      <CalendarCell id="cell-0" :enigma="enigmas[0]" centeredIcon="snowflake" />
-      <CalendarCell id="cell-1" :enigma="enigmas[1]" />
-      <CalendarCell id="cell-2" :enigma="enigmas[2]" />
-      <CalendarCell id="cell-3" :enigma="enigmas[3]" text="Bonnes vacances" direction="horizontal" />
-      <CalendarCell id="cell-4" :enigma="enigmas[4]" />
-      <CalendarCell id="cell-5" :enigma="enigmas[5]" />
-      <CalendarCell id="cell-6" :enigma="enigmas[6]" centeredIcon="christmas-tree" />
-      <CalendarCell id="cell-7" :enigma="enigmas[7]" icon="christmas-leaves" iconPosition="right" />
-      <CalendarCell id="cell-8" :enigma="enigmas[8]" />
-      <CalendarCell id="cell-9" :enigma="enigmas[9]" />
-      <CalendarCell id="cell-10" :enigma="enigmas[10]" icon="christmas-socks" iconPosition="left" />
-      <CalendarCell id="cell-11" :enigma="enigmas[11]" />
-      <CalendarCell id="cell-12" :enigma="enigmas[12]" />
-      <CalendarCell id="cell-13" :enigma="enigmas[13]" icon="sugar-cane" iconPosition="right" />
-      <CalendarCell id="cell-14" :enigma="enigmas[14]" />
-      <CalendarCell id="cell-15" :enigma="enigmas[15]" text="Joyeux Noël" direction="vertical" />
+      <CalendarCell id="cell-0" :isAdmin="isAdmin" :enigma="enigmas[0]" centeredIcon="snowflake" />
+      <CalendarCell id="cell-1" :isAdmin="isAdmin" :enigma="enigmas[1]" />
+      <CalendarCell id="cell-2" :isAdmin="isAdmin" :enigma="enigmas[2]" />
+      <CalendarCell id="cell-3" :isAdmin="isAdmin" :enigma="enigmas[3]" text="Bonnes vacances" direction="horizontal" />
+      <CalendarCell id="cell-4" :isAdmin="isAdmin" :enigma="enigmas[4]" />
+      <CalendarCell id="cell-5" :isAdmin="isAdmin" :enigma="enigmas[5]" />
+      <CalendarCell id="cell-6" :isAdmin="isAdmin" :enigma="enigmas[6]" centeredIcon="christmas-tree" />
+      <CalendarCell id="cell-7" :isAdmin="isAdmin" :enigma="enigmas[7]" icon="christmas-leaves" iconPosition="right" />
+      <CalendarCell id="cell-8" :isAdmin="isAdmin" :enigma="enigmas[8]" />
+      <CalendarCell id="cell-9" :isAdmin="isAdmin" :enigma="enigmas[9]" />
+      <CalendarCell id="cell-10" :isAdmin="isAdmin" :enigma="enigmas[10]" icon="christmas-socks" iconPosition="left" />
+      <CalendarCell id="cell-11" :isAdmin="isAdmin" :enigma="enigmas[11]" />
+      <CalendarCell id="cell-12" :isAdmin="isAdmin" :enigma="enigmas[12]" />
+      <CalendarCell id="cell-13" :isAdmin="isAdmin" :enigma="enigmas[13]" icon="sugar-cane" iconPosition="right" />
+      <CalendarCell id="cell-14" :isAdmin="isAdmin" :enigma="enigmas[14]" />
+      <CalendarCell id="cell-15" :isAdmin="isAdmin" :enigma="enigmas[15]" text="Joyeux Noël" direction="vertical" />
     </div>
   </div>
 </template>
@@ -30,6 +30,9 @@
     computed: {
       enigmas() {
         return this.$store.state.enigmas;
+      },
+      isAdmin() {
+        return this.$store.state.user.role === 'admin';
       },
     },
   };

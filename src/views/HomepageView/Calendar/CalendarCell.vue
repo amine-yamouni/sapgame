@@ -42,6 +42,7 @@
     components: { Button, Icon },
     props: {
       enigma: { type: Object, required: true },
+      isAdmin: { type: Boolean },
       text: { type: String },
       direction: { type: String },
       centeredIcon: { type: String },
@@ -59,7 +60,7 @@
       },
       enable() {
         const startDate = Date.parse(this.enigma.startDate) + 7 * 60 * 60 * 1000; // Start at 8:00 am with GMT+1
-        return Date.now() > startDate;
+        return Date.now() > startDate || this.isAdmin;
       },
     },
     methods: {
