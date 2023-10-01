@@ -9,10 +9,11 @@ import {
   RankingView,
 } from '../views';
 
-const launchAppDay = new Date('2023-12-01').getTime();
-const today = Date.now();
-const launched = launchAppDay - today < 0;
-const showCountdown = !launched && process.env.NODE_ENV !== 'development';
+//const launchAppDay = new Date('2023-12-01').getTime();
+//const today = Date.now();
+//const launched = launchAppDay - today < 0;
+//const showCountdown = !launched && process.env.NODE_ENV !== 'development';
+const showCountdown = false;
 
 const routes = [
   { path: '/', component: showCountdown ? LaunchCountdownView : HomepageView },
