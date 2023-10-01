@@ -29,7 +29,7 @@ export default {
   signup({ username, email, password }) {
     return createUserWithEmailAndPassword(getAuth(), email, password).then(userCredentials => {
       const uid = userCredentials.user.uid;
-      const user = { id: uid, username, role: 'player', totalPoints: 0, accumulation: 0 };
+      const user = { id: uid, username, role: 'player', totalPoints: 0, accumulation: -1 };
       return set(ref(db, `/users/${uid}`), user).then(() => user);
     });
   },

@@ -86,13 +86,13 @@ export default {
     commit(types.RESET_SIGNUP_ERRORS);
 
     // Manage entered data
-    if (user.projectCode !== 'ARF') {
+    if (user.projectCode !== 'SAP') {
       commit(types.SET_SIGNUP_ERROR, { input: 'projectCode', message: 'Code projet incorrect' });
     }
-    if (user.username.length < 8) {
+    if (user.username.length < 6) {
       commit(types.SET_SIGNUP_ERROR, {
         input: 'username',
-        message: 'Le nom utilisateur doit contenir au moins 8 caracteres',
+        message: 'Le nom utilisateur doit contenir au moins 6 caracteres',
       });
     }
     if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(user.email)) {
@@ -196,8 +196,9 @@ export default {
    */
   approveResponse({ commit }, { answer, id }) {
     userServices.get(answer.userId).then(user => {
-      const userPoints = 5 + user.totalPoints + user.accumulation + 1;
-      userServices.updateUserPointsOnApprove(answer.userId, userPoints, user.accumulation + 1).then(() => {
+      const acc = user.accumulation < 5 ? user.accumulation + 1 : 5;
+      const userPoints = 5 + user.totalPoints + acc;
+      userServices.updateUserPointsOnApprove(answer.userId, userPoints, acc).then(() => {
         userServices
           .updateAnswerResultOnApproveOrOnReject(answer.userId, id, true)
           .then(() => commit(types.REMOVE_ANSWER_TO_CHECK, { answerId: id, userAnswerInfos: answer }));

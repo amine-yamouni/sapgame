@@ -25,7 +25,7 @@
     <Input
       type="text"
       label="Adresse mail"
-      placeholder="perenoel@partner.auchan.fr"
+      placeholder="perenoel@pole-nord.fr"
       size="big"
       :error="emailError"
       :value="email"

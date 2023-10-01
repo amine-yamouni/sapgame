@@ -1,24 +1,22 @@
 <template>
   <div id="calendar-container">
     <div id="calendar">
-      <CalendarCell id="cell-1" :enigma="enigmas[0]" centeredIcon="snowflake" />
-      <CalendarCell id="cell-2" :enigma="enigmas[1]" />
-      <CalendarCell id="cell-3" :enigma="enigmas[2]" />
-      <CalendarCell id="cell-6" :enigma="enigmas[3]" text="Bonnes vacances" direction="horizontal" />
-      <CalendarCell id="cell-7" :enigma="enigmas[4]" centeredIcon="moon-stars" />
-      <CalendarCell id="cell-8" :enigma="enigmas[5]" />
-      <CalendarCell id="cell-9" :enigma="enigmas[6]" />
-      <CalendarCell id="cell-10" :enigma="enigmas[7]" />
-      <CalendarCell id="cell-13" :enigma="enigmas[8]" centeredIcon="christmas-tree" />
-      <CalendarCell id="cell-14" :enigma="enigmas[9]" icon="christmas-leaves" iconPosition="right" />
-      <CalendarCell id="cell-15" :enigma="enigmas[10]" />
-      <CalendarCell id="cell-16" :enigma="enigmas[11]" />
-      <CalendarCell id="cell-17" :enigma="enigmas[12]" icon="christmas-socks" iconPosition="left" />
-      <CalendarCell id="cell-20" :enigma="enigmas[13]" />
-      <CalendarCell id="cell-21" :enigma="enigmas[14]" />
-      <CalendarCell id="cell-23" :enigma="enigmas[15]" />
-      <CalendarCell id="cell-22" :enigma="enigmas[16]" icon="sugar-cane" iconPosition="right" />
-      <CalendarCell id="cell-24" :enigma="enigmas[17]" text="Joyeux Noël" direction="vertical" />
+      <CalendarCell id="cell-0" :enigma="enigmas[0]" centeredIcon="snowflake" />
+      <CalendarCell id="cell-1" :enigma="enigmas[1]" />
+      <CalendarCell id="cell-2" :enigma="enigmas[2]" />
+      <CalendarCell id="cell-3" :enigma="enigmas[3]" text="Bonnes vacances" direction="horizontal" />
+      <CalendarCell id="cell-4" :enigma="enigmas[4]" />
+      <CalendarCell id="cell-5" :enigma="enigmas[5]" />
+      <CalendarCell id="cell-6" :enigma="enigmas[6]" centeredIcon="christmas-tree" />
+      <CalendarCell id="cell-7" :enigma="enigmas[7]" icon="christmas-leaves" iconPosition="right" />
+      <CalendarCell id="cell-8" :enigma="enigmas[8]" />
+      <CalendarCell id="cell-9" :enigma="enigmas[9]" />
+      <CalendarCell id="cell-10" :enigma="enigmas[10]" icon="christmas-socks" iconPosition="left" />
+      <CalendarCell id="cell-11" :enigma="enigmas[11]" />
+      <CalendarCell id="cell-12" :enigma="enigmas[12]" />
+      <CalendarCell id="cell-13" :enigma="enigmas[13]" icon="sugar-cane" iconPosition="right" />
+      <CalendarCell id="cell-14" :enigma="enigmas[14]" />
+      <CalendarCell id="cell-15" :enigma="enigmas[15]" text="Joyeux Noël" direction="vertical" />
     </div>
   </div>
 </template>
@@ -48,7 +46,7 @@
 
     #calendar {
       display: grid;
-      grid-template-columns: repeat(9, 1fr);
+      grid-template-columns: repeat(8, 1fr);
       grid-template-rows: repeat(3, 1fr);
       gap: 10px;
       width: 100%;
@@ -69,7 +67,7 @@
       }
 
       // CENTERED ICON
-      #cell-1 {
+      #cell-0 {
         :deep(.calendar-cell) {
           background-color: $color-background-light;
           color: $color-white;
@@ -81,7 +79,7 @@
       }
 
       // STARS
-      #cell-2 :deep(.calendar-cell) {
+      #cell-1 :deep(.calendar-cell) {
         background: radial-gradient(
             circle,
             transparent 20%,
@@ -107,7 +105,7 @@
       }
 
       // DIAGONAL
-      #cell-3 {
+      #cell-2 {
         &.calendar-cell-container {
           grid-area: 1 / 8 / 3 / 8;
 
@@ -127,7 +125,7 @@
       }
 
       // STARS
-      #cell-6 {
+      #cell-3 {
         &.calendar-cell-container {
           grid-area: 3 / 3 / 3 / 5;
         }
@@ -157,57 +155,8 @@
         }
       }
 
-      // CENTERED ICON
-      #cell-7 :deep(.calendar-cell) {
-        background: $color-background-light;
-        color: $color-white;
-
-        .icon {
-          color: $color-background-very-light;
-
-          svg {
-            fill: $color-background-very-light;
-          }
-        }
-      }
-
-      // STARS
-      #cell-8 {
-        &.calendar-cell-container {
-          grid-area: 2 / 9 / 4 / 9;
-
-          @media screen and (max-width: 1500px) {
-            grid-area: 4 / 2 / 4 / 2;
-          }
-        }
-        :deep(.calendar-cell) {
-          background: radial-gradient(
-              circle,
-              transparent 20%,
-              $color-christmas-green 20%,
-              $color-christmas-green 80%,
-              transparent 80%,
-              transparent
-            ),
-            radial-gradient(
-                circle,
-                transparent 20%,
-                $color-christmas-green 20%,
-                $color-christmas-green 80%,
-                transparent 80%,
-                transparent
-              )
-              30px 30px,
-            linear-gradient($color-christmas-yellow 2.4px, transparent 2.4px) 0 -1.2px,
-            linear-gradient(90deg, $color-christmas-yellow 2.4px, $color-christmas-green 2.4px) -1.2px 0,
-            $color-christmas-yellow;
-          background-size: 60px 60px, 60px 60px, 30px 30px, 30px 30px;
-          color: $color-background-light;
-        }
-      }
-
       // DIAGONAL
-      #cell-9 {
+      #cell-4 {
         &.calendar-cell-container {
           grid-area: 1 / 4 / 3 / 4;
         }
@@ -223,7 +172,7 @@
       }
 
       // ZIGZAG
-      #cell-10 {
+      #cell-5 {
         &.calendar-cell-container {
           grid-area: 1 / 6 / 1 / 8;
 
@@ -243,7 +192,7 @@
       }
 
       // CENTERED ICON
-      #cell-13 {
+      #cell-6 {
         &.calendar-cell-container {
           @media screen and (max-width: 1500px) {
             grid-area: 1 / 5 / 3 / 6;
@@ -263,7 +212,7 @@
       }
 
       // ICON
-      #cell-14 {
+      #cell-7 {
         &.calendar-cell-container {
           @media screen and (max-width: 1500px) {
             grid-area: 4 / 3 / 4 / 4;
@@ -277,7 +226,7 @@
       }
 
       // DOTS
-      #cell-15 {
+      #cell-8 {
         &.calendar-cell-container {
           @media screen and (max-width: 1500px) {
             grid-area: 5 / 3 / 5 / 4;
@@ -295,7 +244,7 @@
       }
 
       // DOTS
-      #cell-16 {
+      #cell-9 {
         &.calendar-cell-container {
           @media screen and (max-width: 1500px) {
             grid-area: 3 / 1 / 3 / 2;
@@ -313,7 +262,7 @@
       }
 
       // ICON
-      #cell-17 {
+      #cell-10 {
         &.calendar-cell-container {
           @media screen and (max-width: 1500px) {
             grid-area: 2 / 3 / 2 / 4;
@@ -326,7 +275,7 @@
       }
 
       // ZIGZAG
-      #cell-20 {
+      #cell-11 {
         &.calendar-cell-container {
           grid-area: 2 / 7 / 4 / 7;
 
@@ -346,7 +295,7 @@
       }
 
       // DOTS
-      #cell-21 {
+      #cell-12 {
         &.calendar-cell-container {
           grid-area: 1 / 2 / 1 / 4;
 
@@ -365,13 +314,13 @@
       }
 
       // ICON
-      #cell-22 :deep(.calendar-cell) {
+      #cell-13 :deep(.calendar-cell) {
         background-color: $color-background-light;
         color: $color-white;
       }
 
       // GIFT
-      #cell-23 {
+      #cell-14 {
         &.calendar-cell-container {
           grid-area: 2 / 5 / 3 / 7;
 
@@ -413,7 +362,7 @@
       }
 
       // ZIGZAG
-      #cell-24 {
+      #cell-15 {
         &.calendar-cell-container {
           grid-area: 2 / 2 / 4 / 2;
         }

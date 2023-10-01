@@ -58,7 +58,7 @@
         return Number(this.enigma.startDate.split('-')[2]);
       },
       enable() {
-        const startDate = Date.parse(this.enigma.startDate) + 8 * 60 * 60 * 1000; // Start at 9:00 am with GMT+1
+        const startDate = Date.parse(this.enigma.startDate) + 7 * 60 * 60 * 1000; // Start at 8:00 am with GMT+1
         return Date.now() > startDate;
       },
     },

@@ -3,7 +3,7 @@
     <Input
       type="text"
       label="Email"
-      placeholder="Père noël@partner.auchan.fr"
+      placeholder="Père noël@pole-nord.fr"
       size="big"
       @update="email = $event"
       :value="email"
