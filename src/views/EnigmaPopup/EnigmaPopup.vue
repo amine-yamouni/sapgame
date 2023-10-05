@@ -2,7 +2,7 @@
   <div id="popup-center" :class="[{ show }]">
     <div id="blur" @click="closePopup" />
 
-    <div id="popup-enigma" v-if="!!enigma">
+    <div v-if="!!enigma" id="popup-enigma">
       <div id="popup-header">
         <div id="popup-title">
           # {{ enigma.id }} - {{ enigma.title }}
@@ -59,7 +59,7 @@
       </div>
       <template v-if="canUserEnterResponse">
         <div id="popup-actions">
-          <Button label="Valider" color="default" @click="submit" />
+          <Button color="default" label="Valider" @click="submit" />
         </div>
       </template>
     </div>
@@ -121,7 +121,6 @@
     },
   };
 </script>
-
 <style lang="scss" scoped>
   @import '@/assets/scss/_colors.scss';
 
@@ -129,7 +128,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
     display: flex;
     align-items: center;
@@ -138,13 +136,6 @@
 
     &.show {
       z-index: 1000;
-
-      #blur {
-        opacity: 0.7;
-      }
-      #popup-enigma {
-        transform: scale(100%);
-      }
     }
 
     #blur {
@@ -161,11 +152,11 @@
     #popup-enigma {
       display: flex;
       flex-direction: column;
-      width: 1024px;
+      width: 512px;
+      max-width: 80%;
       border-radius: 20px;
       box-shadow: 0 0 20px $color-background;
       background: #ffffff;
-      transform: scale(50%);
       transition: transform ease 0.3s;
       z-index: 2000;
 
@@ -189,21 +180,6 @@
               padding: 5px 10px 3px;
               border: 2px solid;
               font-size: 10px;
-
-              &.success {
-                border-color: rgb(103, 179, 115);
-                color: rgb(61, 107, 69);
-              }
-
-              &.warning {
-                border-color: rgb(249, 181, 63);
-                color: rgb(149, 108, 37);
-              }
-
-              &.danger {
-                border-color: rgb(212, 96, 79);
-                color: rgb(127, 57, 47);
-              }
             }
           }
         }
@@ -218,7 +194,6 @@
 
       #popup-body {
         display: flex;
-        flex: 1;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -229,24 +204,26 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 80rem;
-          height: 30rem;
+          max-width: 80%;
+          height: 80%;
           margin-bottom: 20px;
 
           img {
             max-width: 100%;
-            max-height: 100%;
+            height: 80%;
           }
         }
 
         #enigma-textarea {
           width: 100%;
+          max-width: 100%;
           height: 100px;
           border-radius: 10px;
           background: $color-white;
 
           textarea {
             width: 100%;
+            max-width: 100%;
             height: 100%;
             padding: 20px;
             border: none;
@@ -274,6 +251,23 @@
         :deep(.btn) {
           width: 100%;
         }
+      }
+    }
+  }
+
+  // Media Queries pour différents écrans
+  @media screen and (max-width: 768px) {
+    #popup-enigma {
+      #enigma-image {
+        width: 80%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #popup-enigma {
+      #enigma-textarea {
+        height: 200px; // Ajustez la hauteur selon vos besoins pour les petits écrans.
       }
     }
   }
