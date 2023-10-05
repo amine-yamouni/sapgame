@@ -375,12 +375,9 @@
             flex-direction: row;
           }
 
-          background: linear-gradient(135deg, $color-christmas-red 25%, transparent 25%) -25px 0,
-            linear-gradient(225deg, $color-christmas-red 25%, transparent 25%) -25px 0,
-            linear-gradient(315deg, $color-christmas-red 25%, transparent 25%),
-            linear-gradient(45deg, $color-christmas-red 25%, transparent 25%);
           background-size: 50px 50px;
-          background-color: $color-christmas-red-dark;
+          background: $color-christmas-red-dark linear-gradient(315deg, $color-christmas-red 25%, transparent 25%)
+            linear-gradient(45deg, $color-christmas-red 25%, transparent 25%) 0 0;
           color: $color-white;
         }
       }
