@@ -39,7 +39,7 @@
 
   @font-face {
     font-family: 'Monoround';
-    src: url('./assets/fonts/Monoround.otf');
+    src: url('./assets/fonts/monoround.otf');
   }
 
   html,
