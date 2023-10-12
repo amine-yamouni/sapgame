@@ -65,7 +65,7 @@
         flex-direction: column;
 
         &:deep(.calendar-cell-container) {
-          height: 90px;
+          height: 100px;
         }
       }
 
@@ -153,7 +153,7 @@
             linear-gradient($color-christmas-red 2.4px, transparent 2.4px) 0 -1.2px,
             linear-gradient(90deg, $color-christmas-red 2.4px, $color-background-light 2.4px) -1.2px 0,
             $color-christmas-red;
-          background-size: 60px 60px, 60px 60px, 30px 30px, 30px 30px;
+          background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px;
           color: $color-christmas-yellow;
         }
       }
@@ -198,7 +198,7 @@
       #cell-6 {
         &.calendar-cell-container {
           @media screen and (max-width: 1500px) {
-            grid-area: 1 / 5 / 3 / 6;
+            grid-area: 1 / 5 / 4 / 6;
           }
         }
         &:deep(.calendar-cell) {
@@ -368,6 +368,10 @@
       #cell-15 {
         &.calendar-cell-container {
           grid-area: 2 / 2 / 4 / 2;
+
+          @media screen and (max-width: 1500px) {
+            grid-area: 2 / 2 / 5 / 2;
+          }
         }
         :deep(.calendar-cell) {
           @media screen and (max-width: 850px) {
@@ -375,9 +379,12 @@
             flex-direction: row;
           }
 
+          background: linear-gradient(135deg, $color-christmas-red 25%, transparent 25%) -25px 0,
+            linear-gradient(225deg, $color-christmas-red 25%, transparent 25%) -25px 0,
+            linear-gradient(315deg, $color-christmas-red 25%, transparent 25%),
+            linear-gradient(45deg, $color-christmas-red 25%, transparent 25%);
           background-size: 50px 50px;
-          background: $color-christmas-red-dark linear-gradient(315deg, $color-christmas-red 25%, transparent 25%)
-            linear-gradient(45deg, $color-christmas-red 25%, transparent 25%) 0 0;
+          background-color: $color-christmas-red-dark;
           color: $color-white;
         }
       }
