@@ -152,7 +152,7 @@
             justify-content: flex-end;
             height: 100%;
             padding-left: 60px;
-            font-family: 'Christmas';
+            font-family: 'Christmas Holiday';
             font-size: 60px;
           }
         }
@@ -165,7 +165,7 @@
             justify-content: center;
             height: 100%;
             padding-left: 20px;
-            font-family: 'Christmas';
+            font-family: 'Christmas Holiday';
             font-size: 60px;
           }
         }

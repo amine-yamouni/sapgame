@@ -131,7 +131,7 @@
           padding-top: 6px;
           padding-right: 1px;
           border-right: 2px solid $color-background;
-          font-family: 'Christmas';
+          font-family: 'Christmas Holiday';
           font-size: 30px;
 
           &::after {

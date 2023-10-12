@@ -28,8 +28,8 @@
   @import '@/assets/scss/_colors.scss';
 
   @font-face {
-    font-family: 'Christmas';
-    src: url('./assets/fonts/christmas.otf');
+    font-family: 'Christmas Holiday';
+    src: url('./assets/fonts/christmas.ttf');
   }
 
   @font-face {
@@ -39,7 +39,7 @@
 
   @font-face {
     font-family: 'Monoround';
-    src: url('./assets/fonts/monoround.otf');
+    src: url('./assets/fonts/Monoround.otf');
   }
 
   html,

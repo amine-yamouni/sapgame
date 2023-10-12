@@ -83,7 +83,7 @@
     width: 100%;
     height: 100%;
     color: $color-white;
-    font-family: 'Christmas';
+    font-family: 'Christmas Holiday';
     font-size: 40px;
     text-align: center;
 
