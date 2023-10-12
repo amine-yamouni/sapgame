@@ -33,7 +33,7 @@
     width: 100%;
     height: 100%;
     color: $color-white;
-    font-family: 'Christmas';
+    font-family: 'Christmas Holiday';
 
     & :deep(div) {
       box-sizing: initial !important;

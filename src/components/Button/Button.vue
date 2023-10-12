@@ -93,7 +93,7 @@
       position: relative;
       background: linear-gradient($color-christmas-red, $color-christmas-red-dark);
       color: $color-white;
-      font-family: 'Christmas';
+      font-family: 'Christmas Holiday';
 
       &::before {
         content: '';
