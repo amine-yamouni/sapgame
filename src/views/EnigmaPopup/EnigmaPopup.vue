@@ -49,11 +49,16 @@
           </div>
         </template>
         <template v-else>
-          <div v-if="currentUser.answers && currentUser.answers && currentUser.answers[enigma.id]" id="enigma-response">
-            Votre reponse : <span>{{ currentUser.answers[enigma.id].response }}</span>
-          </div>
-          <div v-if="isEnigmaEnded && expectedReponse" id="enigma-expected-response">
-            Reponse attendue : <span>{{ expectedReponse }}</span>
+          <div id="response-body">
+            <div
+              v-if="currentUser.answers && currentUser.answers && currentUser.answers[enigma.id]"
+              id="enigma-response"
+            >
+              Votre reponse : <span>{{ currentUser.answers[enigma.id].response }}</span>
+            </div>
+            <div v-if="isEnigmaEnded && expectedReponse" id="enigma-expected-response">
+              Reponse attendue : <span>{{ expectedReponse }}</span>
+            </div>
           </div>
         </template>
       </div>
@@ -152,13 +157,14 @@
     #popup-enigma {
       display: flex;
       flex-direction: column;
-      width: 512px;
+      width: 1024px;
       max-width: 80%;
       border-radius: 20px;
       box-shadow: 0 0 20px $color-background;
       background: #ffffff;
       transition: transform ease 0.3s;
       z-index: 2000;
+      margin-top: 30px;
 
       #popup-header {
         display: flex;
@@ -194,7 +200,7 @@
 
       #popup-body {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -204,22 +210,25 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          max-width: 80%;
+          width: 60%;
+          max-width: 60%;
           height: 80%;
           margin-bottom: 20px;
+          margin-right: 20px;
 
           img {
-            max-width: 100%;
-            height: 80%;
+            max-width: 75%;
+            height: 75%;
           }
         }
 
         #enigma-textarea {
-          width: 100%;
-          max-width: 100%;
-          height: 100px;
+          width: 40%;
+          max-width: 40%;
+          height: 200px;
           border-radius: 10px;
           background: $color-white;
+          margin-right: 20px;
 
           textarea {
             width: 100%;
@@ -232,6 +241,15 @@
             font-size: 16px;
             resize: none;
           }
+        }
+
+        #response-body {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #enigma-response {
+          margin-bottom: 20px;
         }
 
         #enigma-response span,
