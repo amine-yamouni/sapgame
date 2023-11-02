@@ -200,7 +200,6 @@
 
       #popup-body {
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -210,9 +209,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 60%;
-          max-width: 60%;
-          height: 80%;
           margin-bottom: 20px;
           margin-right: 20px;
 
@@ -223,9 +219,6 @@
         }
 
         #enigma-textarea {
-          width: 40%;
-          max-width: 40%;
-          height: 200px;
           border-radius: 10px;
           background: $color-white;
           margin-right: 20px;
@@ -273,19 +266,88 @@
     }
   }
 
+  @media only screen and (min-width: 769px) {
+    #popup-enigma {
+      #popup-body {
+        flex-direction: row;
+
+        #enigma-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60%;
+          max-width: 60%;
+          height: 80%;
+          margin-bottom: 20px;
+          margin-right: 20px;
+
+          img {
+            max-width: 75%;
+            height: 75%;
+          }
+        }
+
+        #enigma-textarea {
+          width: 40%;
+          max-width: 40%;
+          height: 200px;
+        }
+      }
+    }
+  }
+
   // Media Queries pour différents écrans
   @media screen and (max-width: 768px) {
     #popup-enigma {
-      #enigma-image {
-        width: 80%;
+      #popup-body {
+        flex-direction: column;
+
+        #enigma-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60%;
+          max-width: 60%;
+          height: 80%;
+          margin-bottom: 20px;
+          margin-right: 20px;
+
+          img {
+            max-width: 75%;
+            height: 75%;
+          }
+        }
+
+        #enigma-textarea {
+          width: 40%;
+          max-width: 40%;
+          height: 200px;
+        }
       }
     }
   }
 
   @media screen and (max-width: 480px) {
     #popup-enigma {
-      #enigma-textarea {
-        height: 200px; // Ajustez la hauteur selon vos besoins pour les petits écrans.
+      #popup-body {
+        flex-direction: column;
+
+        #enigma-image {
+          width: 120%;
+          max-width: 120%;
+          height: 80%;
+
+          img {
+            max-width: 100%;
+            height: 100%;
+          }
+        }
+
+        #enigma-textarea {
+          width: 90%;
+          max-width: 90%;
+          height: 100px;
+        }
       }
     }
   }
