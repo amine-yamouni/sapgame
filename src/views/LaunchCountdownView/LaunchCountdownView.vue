@@ -102,6 +102,12 @@
         flex-direction: column;
       }
 
+      @media screen and (max-width: 480px) {
+        h1 {
+          padding-top: 650px;
+        }
+      }
+
       .coutdown-case {
         position: relative;
         display: flex;
