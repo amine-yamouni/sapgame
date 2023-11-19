@@ -77,7 +77,8 @@
       font-size: 30px;
 
       @media screen and (max-width: 900px) {
-        //display: none;
+        font-size: 25px;
+        margin-bottom: 10px;
       }
     }
 

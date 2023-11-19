@@ -87,9 +87,14 @@
     font-size: 40px;
     text-align: center;
 
-    @media screen and (max-width: 830px) {
+    @media screen and (max-width: 480px) {
       font-size: 30px;
       padding-top: 480px;
+    }
+
+    @media screen and (max-width: 830px) {
+      font-size: 30px;
+      padding-top: 100px;
     }
 
     #countdown {
