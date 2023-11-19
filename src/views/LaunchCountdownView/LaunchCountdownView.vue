@@ -89,7 +89,7 @@
 
     @media screen and (max-width: 830px) {
       font-size: 30px;
-      padding-top: 100px;
+      padding-top: 480px;
     }
 
     #countdown {
@@ -100,12 +100,6 @@
 
       @media screen and (max-width: 720px) {
         flex-direction: column;
-      }
-
-      @media screen and (max-width: 480px) {
-        h1 {
-          padding-top: 650px;
-        }
       }
 
       .coutdown-case {
