@@ -92,8 +92,8 @@
       },
       canUserEnterResponse() {
         const now = Date.now();
-        const startDate = Date.parse(this.enigma.startDate) + 8 * 60 * 60 * 1000; // Start at 9:00 am with gmt+1
-        const endDate = Date.parse(this.enigma.endDate) + 8 * 60 * 60 * 1000; // Start at 9:00 am with gmt+1
+        const startDate = Date.parse(this.enigma.startDate) + 7 * 60 * 60 * 1000; // Start at 8:00 am with gmt+1
+        const endDate = Date.parse(this.enigma.endDate) + 7 * 60 * 60 * 1000; // Start at 8:00 am with gmt+1
         const currentUser = this.$store.state.user;
         const enigma = this.$store.state.app.enigmaPopup.enigma;
         return (
@@ -104,7 +104,7 @@
       },
       isEnigmaEnded() {
         const now = Date.now();
-        const endDate = Date.parse(this.enigma.endDate) + 8 * 60 * 60 * 1000; // Start at 9:00 am with GMT+1
+        const endDate = Date.parse(this.enigma.endDate) + 7 * 60 * 60 * 1000; // Start at 7:00 am with GMT+1
         return now > endDate;
       },
       show() {
