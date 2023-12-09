@@ -1,11 +1,23 @@
 <template>
   <Page shouldUserBeAuthenticated>
-    <div id="ranking-page">
-      <div id="top-ranks">
-        <RankingItem v-for="(topuser, index) in rankingTopUsers" :key="index" :user="topuser" />
+    <div v-if="mustHideRanking()">
+      <div id="secretRanking">
+        <Deer />
+        <div id="title">Suspens et boule de neige</div>
+        <div id="description">
+          continuons le jeu jusqu'à la fin! <br />Le classement reste secret, <br />une énigme que seul le dénouement
+          dévoilera.
+        </div>
       </div>
-      <div id="other-ranks">
-        <RankingItem v-for="(user, index) in ranking" :key="index" :user="user" />
+    </div>
+    <div v-else>
+      <div id="ranking-page">
+        <div id="top-ranks">
+          <RankingItem v-for="(topuser, index) in rankingTopUsers" :key="index" :user="topuser" />
+        </div>
+        <div id="other-ranks">
+          <RankingItem v-for="(user, index) in ranking" :key="index" :user="user" />
+        </div>
       </div>
     </div>
   </Page>
@@ -16,9 +28,11 @@
 
   import RankingItem from './RankingItem';
 
+  import Deer from '../PageNotFoundView/Deer';
+
   export default {
     name: 'RankingView',
-    components: { Page, RankingItem },
+    components: { Page, RankingItem, Deer },
     computed: {
       ranking() {
         return this.$store.state.ranking.slice(3);
@@ -29,6 +43,13 @@
     },
     beforeMount() {
       this.$store.dispatch('prepareRankingTable');
+    },
+    methods: {
+      mustHideRanking() {
+        const currentDate = new Date();
+        const deadline = new Date('2023-12-19T20:00:00Z');
+        return currentDate > deadline;
+      },
     },
   };
 </script>
@@ -204,6 +225,34 @@
           font-size: 17px;
         }
       }
+    }
+  }
+
+  #secretRanking {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: $color-white;
+    font-family: 'Christmas Holiday';
+
+    & :deep(div) {
+      box-sizing: initial !important;
+    }
+
+    #title {
+      padding: 50px 0 30px;
+      font-size: 60px;
+    }
+
+    #description {
+      padding-bottom: 75px;
+      font-size: 40px;
+      align-items: center;
+      text-align: center;
     }
   }
 </style>
